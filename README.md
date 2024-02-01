@@ -23,6 +23,7 @@ Lista dei materiali usati:
 - una lamiera di tettuccio arnia da 10 favi;
 - l'elemento "più complicato" da procurarsi sono le squadrette per alloggiare le celle di carico. Io ho fatto stampare queste: https://www.thingiverse.com/thing:2624188 Si trovano anche su ebay, altrimenti dovreste cercare il modo di stamparle in 3D;
 - una SIM dati (Ho. Mobile o ThingsMobile o simili)
+- un cavo USB per arduino-stampante almeno di 1,5m, meglio 2m.
 
 # Procediamo
 
@@ -62,6 +63,21 @@ L'aggiornamento è un processo poco simpatico, in quanto è necessario:
 - creare un ponte sulla connessione della funzione "reset"
   come indicato in questa figura:
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/6b855a0d-1f4d-4945-9d2b-8c9d72ae0d10)
-Il flasher comincerà ad aggiornare il firmware e a operazione completata, vi accorgerete subito del successo in quanto il led della scheda blinkerà ogni 3 secondi e non ogni secondo, connettendovi alla rete gprs e 4G della vostra SIM.
+
+
+A contatto avvenuto, il flasher comincerà ad aggiornare il firmware e a operazione completata, vi accorgerete subito del successo in quanto il led della scheda blinkerà ogni 3 secondi e non ogni secondo, connettendovi alla rete gprs e 4G della vostra SIM.
 Adesso è utilizzabile.
  
+# Prepariamo le plastiche e foriamole
+
+Il titolo è esaustivo.
+Qui viene fuori il vero senso del fai da te.
+Vi posto le foto dell'ossatura della bilancia, con l'idea di massima di come ho collocato la sua elettronica:
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/543266d5-9778-4033-8d66-ba67b44d8859)
+
+Questa è la versione invece "chiusa", ma non ancora fissata:
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/a7b0129b-dbf0-4d4c-81c2-bc4201cf9bc1)
+
+Le plastiche da forare sono 3: le 2 nere, nelle quali fare 3 fori e una sola bianca la quale ospiterà Arduino, lo shield, la scheda HX711, le connessioni e l'antenna GSM.
+Non ho disegni con quote e sono andato ad occhio, ma vi serve una punta del trapano per forare con lo stesso diametro dei passacavo IP68 più piccolo possibile, PG7.
+Come visibile nell'immagine, quello bianco necessita di 4 fori. 3 fori per i PG7 e uno ce faccia passare l'USB di Arduino.
