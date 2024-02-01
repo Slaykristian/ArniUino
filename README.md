@@ -24,6 +24,14 @@ Lista dei materiali usati:
 - l'elemento "più complicato" da procurarsi sono le squadrette per alloggiare le celle di carico. Io ho fatto stampare queste: https://www.thingiverse.com/thing:2624188 Si trovano anche su ebay, altrimenti dovreste cercare il modo di stamparle in 3D
 
 # Procediamo
+
+# Installiamo l'IDE di Arduino
+
+Comiciamo a giocare subito con arduino e, se non si è già abili, a prendere confidenza con gli sketch e coi sensori.
+La cosa più semplice è seguire le guide apposite che si trovano in rete, ad es. in canali YouTube.
+Imparate a connettere correttamente, cominciando uno per volta, gli elementi che avete acquistato e testatene il funzionamento.
+
+
 # Lo shield GSM
 
 A causa delle dimensioni geometriche, lo shield SIM900A è il giusto compromesso tra funzionalità e spazio occupato. Ma attenzione, deve esse dello stesso tipo della lista dei materiali.
@@ -31,6 +39,11 @@ A causa delle dimensioni geometriche, lo shield SIM900A è il giusto compromesso
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/4828eb5a-0bf7-4d25-ab82-a6288524ee09)
 
 Se lo installate così com'è, troverete un errore dovuto al blocco di utilizzo sulle reti 4G europee.
+La prima cosa da fare è connettere la parte di alimentazione ai pin presenti su Arduino e collegare i 2 pin (uno per Tx e uno per Rx) alla scheda con gli ingressi digitali.
+Non è necessario includere librerie diverse da SoftwareSerial.h, quindi, dovreste preparare uno sketch molto semplice lanciando il comando "AT+GMR", Connetti TX a pin3 e RX a pin4:
+
+
+
 E' quindi necessario provvedere a scaricare un firmware adatto (anche se per SIM900 e non per 900A) e installarlo secondo la procedura presente in questo sito:
 https://acoptex.com/wp/basics-project-105b-sim900a-gsm-gprs-module-how-to-flash-another-firmware/
 
@@ -41,3 +54,4 @@ https://drive.google.com/file/d/0B-rBpaSGK1gpbmF6MnNkbEJwNW8/edit
 
 Connettete lo shield all'adattatore seriale così:
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/bf9804f7-cada-42fb-b549-8752365ca27d)
+
