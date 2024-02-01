@@ -15,8 +15,29 @@ Lista dei materiali usati:
 - Celle di carico 50kg con HX711;
 - Jumper vari (femmina-maschio);
 - 2 sensori DHT11;
+- un convertitore USB-Seriale come questo https://www.ebay.it/itm/361612198155
 - cavo dati (8 poli - minimo 2m);
 - scatole di derivazione IP65 (2 tipo 84x58x34mm IP65; 4 tipo 100x68x50mm IP65);
 - connettori passacavo IP68 tipo regolabile con controdado;
 - 2 elementi in legno dimensione 50x70x2cm;
-- una lamiera di tettuccio arnia da 10 favi.
+- una lamiera di tettuccio arnia da 10 favi;
+- l'elemento "più complicato" da procurarsi sono le squadrette per alloggiare le celle di carico. Io ho fatto stampare queste: https://www.thingiverse.com/thing:2624188 Si trovano anche su ebay, altrimenti dovreste cercare il modo di stamparle in 3D
+
+# Procediamo
+# Lo shield GSM
+
+A causa delle dimensioni geometriche, lo shield SIM900A è il giusto compromesso tra funzionalità e spazio occupato. Ma attenzione, deve esse dello stesso tipo della lista dei materiali.
+
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/4828eb5a-0bf7-4d25-ab82-a6288524ee09)
+
+Se lo installate così com'è, troverete un errore dovuto al blocco di utilizzo sulle reti 4G europee.
+E' quindi necessario provvedere a scaricare un firmware adatto (anche se per SIM900 e non per 900A) e installarlo secondo la procedura presente in questo sito:
+https://acoptex.com/wp/basics-project-105b-sim900a-gsm-gprs-module-how-to-flash-another-firmware/
+
+Firmware per scheda versione 64:
+https://drive.google.com/file/d/0B-rBpaSGK1gpNXZFdWgtR3QtNk0/edit?usp=sharing
+Firmware per scheda versione 32:
+https://drive.google.com/file/d/0B-rBpaSGK1gpbmF6MnNkbEJwNW8/edit
+
+Connettete lo shield all'adattatore seriale così:
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/bf9804f7-cada-42fb-b549-8752365ca27d)
