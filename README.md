@@ -16,6 +16,7 @@ Lista dei materiali usati:
 - Jumper vari (femmina-maschio);
 - 2 sensori DHT11;
 - cavo dati (8 poli - minimo 2m);
-- scatole di derivazione IP65 (2 tipo 84*58*34mm IP65; 4 tipo 100*68*50mm IP65);
-- connettori passacavo IP68 tipo regolabile con controdado
-- 2 elementi in legno dimensione 50*70*2cm
+- scatole di derivazione IP65 (2 tipo 84x58x34mm IP65; 4 tipo 100x68x50mm IP65);
+- connettori passacavo IP68 tipo regolabile con controdado;
+- 2 elementi in legno dimensione 50x70x2cm;
+- una lamiera di tettuccio arnia da 10 favi.
