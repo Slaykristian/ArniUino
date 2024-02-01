@@ -55,6 +55,18 @@ Firmware per scheda versione 32:
 https://drive.google.com/file/d/0B-rBpaSGK1gpbmF6MnNkbEJwNW8/edit
 
 Connettete lo shield all'adattatore seriale così:
+
+
+
+
+
+
+
+
+
+
+
+
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/bf9804f7-cada-42fb-b549-8752365ca27d)
 
 L'aggiornamento è un processo poco simpatico, in quanto è necessario:
@@ -62,6 +74,19 @@ L'aggiornamento è un processo poco simpatico, in quanto è necessario:
 - aprire il software e scegliere il file, impostando l'interfaccia come previsto nel link;
 - creare un ponte sulla connessione della funzione "reset"
   come indicato in questa figura:
+
+
+
+
+
+
+
+
+
+
+
+
+  
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/6b855a0d-1f4d-4945-9d2b-8c9d72ae0d10)
 
 
@@ -73,11 +98,61 @@ Adesso è utilizzabile.
 Il titolo è esaustivo.
 Qui viene fuori il vero senso del fai da te.
 Vi posto le foto dell'ossatura della bilancia, con l'idea di massima di come ho collocato la sua elettronica:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/543266d5-9778-4033-8d66-ba67b44d8859)
 
 Questa è la versione invece "chiusa", ma non ancora fissata:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/a7b0129b-dbf0-4d4c-81c2-bc4201cf9bc1)
 
-Le plastiche da forare sono 3: le 2 nere, nelle quali fare 3 fori e una sola bianca la quale ospiterà Arduino, lo shield, la scheda HX711, le connessioni e l'antenna GSM.
+Le plastiche da forare sono 3: le 2 nere, nelle quali fare in una 3 fori, in una 4 e una sola bianca la quale ospiterà Arduino, lo shield, la scheda HX711, le connessioni e l'antenna GSM.
 Non ho disegni con quote e sono andato ad occhio, ma vi serve una punta del trapano per forare con lo stesso diametro dei passacavo IP68 più piccolo possibile, PG7.
 Come visibile nell'immagine, quello bianco necessita di 4 fori. 3 fori per i PG7 e uno ce faccia passare l'USB di Arduino.
+Non mi dilungherò in merito, ma lascio alle foto quanto è necessario fare. Una volta eseguiti i fori, è necessario curarsi di inserire i passacavi. Le scatole bianche sono l'appoggio per le squadrette con le celle di carico.
+
+# Connettere le celle di carico
+
+Lo schema di connessione delle celle di carico è questo:
+
+
+
+
+
+
+
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/82a98358-fc56-42a8-be53-660defa3d13b)
+
+
+Questo è per darvi un'idea di massima, della logica di connessione delle celle e dell'HX711. Nel prossimo punto assembleremo celle, shield e sensori, con la sequenza di pin previsti dal codice che andremo a realizzare.
+
+# Connettiamo tutto
+
+Un consiglio è di provare tutte le connessioni senza riporle nelle scatole. 
+Comprese le logice di connessione
