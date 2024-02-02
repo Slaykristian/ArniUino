@@ -17,8 +17,6 @@ const int pinSck = 3;
 
 HX711 scale;
 
-//String numeroDestinatario = "+393490095100";  // Sostituisci con il numero reale
-
 DHT dht1(DHTPIN1, DHT11);
 DHT dht2(DHTPIN2, DHT11);
 
@@ -76,7 +74,7 @@ void loop() {
   
   scale.tare();
   scale.set_offset(221872); // impone l'offset calcolato dalla procedura di calibrazione
-  scale.set_scale(20.287900);       // gli dice che ogni unità va moltiplicata per 20.287900 calcolato sempre dalla proc. di calibrazione - TODO you need to calibrate this yourself.
+  scale.set_scale(20.287900);       // gli dice che ogni unità va moltiplicata per 20.287900 calcolato sempre dalla proc. di calibrazione
   Serial.print("UNITS: ");
   Serial.println(scale.get_units(10));
 
@@ -127,8 +125,7 @@ void loop() {
  
   ShowSerialData();
  
-  gprsSerial.println("AT+CSTT=\"web.ho-mobile.it\"");//start task and setting the APN,
-//  gprsSerial.println("AT+CSTT=\"TM\"");//start task and setting the APN,
+  gprsSerial.println("AT+CSTT=\"**********\""); //al posto degli ********** inserire il vostro indirizzo APN per la connessione, fornito dal gestore della SIM
 
   delay(1000);
  
@@ -170,8 +167,9 @@ void loop() {
     asm volatile ("  jmp 0");
     } else {
   
-  String str="GET https://api.thingspeak.com/update?api_key=UTMG5HRDFP9OPERT&field1="+String(h1)+"&field2="+String(t1)+"&field3="+String(h2)+"&field4="+String(t2)+"&field5="+String(weight_corr,1);  //invia la lettura del sensore 1 (ricordarsi di creare "field1" e "field2")
-  Serial.println(str);
+  String str="GET https://api.thingspeak.com/update?api_key=*************&field1="+String(h1)+"&field2="+String(t1)+"&field3="+String(h2)+"&field4="+String(t2)+"&field5="+String(weight_corr,1);  //invia la lettura del sensore 1 (ricordarsi di creare "field1" e "field2")
+// Nella stringa, al posto degli ************* inserite la chiave di pubblicazione sul vostro spazio thingspeak che avete creato in precedenza  
+Serial.println(str);
   gprsSerial.println(str);//begin send data to remote server
 
   delay(4000);
