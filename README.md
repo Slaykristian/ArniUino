@@ -185,6 +185,9 @@ Per quanto riguarda la parte di connessione tra celle e HX711, basatevi sullo sc
 In Arduino è possibile divertirsi con le celle di carico, usando gli sketch forniti dalla libreria HX711.h che vi consiglio di provare.
 Sarà poi una di quelle librerie che installeremo e richiameremo.
 
+E' importante procurarsi le squadrette indicate nella lista dei materiali all'inizio, altrimenti dovrete costruirvi un alloggio simile per utilizzarle sui ciascuna scatola plastica bianca.
+La squadretta contenente la cella poi, io l'ho incollata sulle plastiche bianche.
+
 Nel prossimo punto assembleremo celle, shield e sensori, con la sequenza di pin previsti dal codice che andremo a realizzare.
 
 # Connettiamo tutto
