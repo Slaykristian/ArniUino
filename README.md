@@ -35,7 +35,7 @@ Lista dei materiali usati:
 
 Comiciamo a giocare subito con arduino e, se non si è già abili, a prendere confidenza con gli sketch e coi sensori.
 La cosa più semplice è seguire le guide apposite che si trovano in rete, ad es. in canali YouTube.
-Imparate a connettere correttamente, cominciando uno per volta, gli elementi che avete acquistato e testatene il funzionamento.
+Imparate a connettere correttamente, cominciando a provare uno per volta, gli elementi che avete acquistato e testatene il funzionamento.
 
 
 # Lo shield GSM
