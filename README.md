@@ -44,7 +44,17 @@ Tralascio tutta la spiegazione su come collegarlo e sui comandi AT. Per chi vole
 Se lo installate così com'è, troverete un errore dovuto al blocco di utilizzo sulle reti 4G europee.
 Ve ne accorgete perchè, se collegato ad Arduino, e inserite una SIM, il led blinka ad ogni secondo perchè continua a cercare la rete senza trovarla, altrimenti blinkerebbe ogni 3 secondi.
 La prima cosa da fare è connettere la parte di alimentazione ai pin presenti su Arduino e collegare i 2 pin (uno per Tx e uno per Rx) alla scheda con gli ingressi digitali.
-Non è necessario includere librerie diverse da SoftwareSerial.h, quindi, dovreste preparare uno sketch molto semplice lanciando il comando "AT+GMR", Connetti TX a pin3 e RX a pin4 e usa questo sketch: https://github.com/Slaykristian/ArniUino/blob/main/Sketch_versione_SIM900A
+Come connetterlo ad Arduino?
+Estraendo una delle immagini è ben visibile dove connettere i pin "Rx" e "Tx", ricordandosi che il Pin "Rx" (nella foto è 5VR; il 5VT è quello "Tx") che esce dallo shield, sull'Arduino corrisponde al suo slot "Tx" e viceversa:
+
+
+
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/cfb2daf1-ca84-4d85-ae0d-1245bd2b95c6)
+
+
+
+
+Negli sketch che potreste provare su Arduino con lo shield, non è necessario includere librerie diverse da SoftwareSerial.h (che è l'unica da includere), quindi, dovreste preparare uno sketch molto semplice lanciando il comando "AT+GMR", Connetti TX a pin3 e RX a pin4 e usa questo sketch: https://github.com/Slaykristian/ArniUino/blob/main/Sketch_versione_SIM900A
 
 E' quindi necessario provvedere a scaricare un firmware adatto (anche se per SIM900 e non per 900A) e installarlo secondo la procedura presente in questo sito:
 https://acoptex.com/wp/basics-project-105b-sim900a-gsm-gprs-module-how-to-flash-another-firmware/
@@ -155,4 +165,5 @@ Questo è per darvi un'idea di massima, della logica di connessione delle celle 
 # Connettiamo tutto
 
 Un consiglio è di provare tutte le connessioni senza riporle nelle scatole. 
-Comprese le logice di connessione
+Comprese le logiche di connessione dei sensori, dell'HX711 e dello shield GSM.
+
