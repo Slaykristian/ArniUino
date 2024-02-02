@@ -1,7 +1,6 @@
 //Questo sketch permette la lettura dei dati dai sensori e dalle celle di carico con l'invio sul portale "thingspeak.com".
 //Ricordarsi di eseguire lo sketch "calibrating" presente in HX711 per fissare il valore dello 0kg.
-//Attualmente è impostato per usare come piano di appoggio un pannello di MDF, solo per fare le prove.
-
+//Info su http://github.com/Slaykristian/ArniUino
 
 #include <SoftwareSerial.h>
 #include <DHT.h>
@@ -277,9 +276,7 @@ void RipetizioneSMS() {
   }
 
   // Dopo 500 ripetizioni, riavvia lo sketch
-  asm volatile ("  jmp 0"); // Assicurati che la tua board supporti questa funzione
-  // Oppure puoi utilizzare una funzione di reset specifica della tua board, se disponibile
-  // ad esempio, per Arduino Uno: asm volatile ("  jmp 0");
+  asm volatile ("  jmp 0"); // COmando di reset per Arduino Uno;
 }
 void inviaResetSMS(String mittente) {
   // Avviso che sto per resettare Arduino
@@ -321,8 +318,7 @@ Serial.print("Peso: ");
 Serial.print(weight_corr, 1);
 Serial.println(" kg");
   // Crea il messaggio SMS con la lettura del sensore
-  // String messaggio = "Temperatura ext: " + String(t1) + "*C, Umidita' ext: " + String(h1) + "% Temperatura int: " + String(t2) + "*C, Umidita' int: " + String(h2) + "% Peso : " + String(weight,1) + "Kg";
-
+  
   String messaggio = "Temperatura ext: " + String(t1) + "*C, Umidita' ext: " + String(h1) + "% Temperatura int: " + String(t2) + "*C, Umidita' int: " + String(h2) + "% Peso : " + String(weight_corr,1) + "Kg";
 
   // Invia il messaggio SMS al numero destinatario
@@ -337,7 +333,6 @@ Serial.println(" kg");
 }
 void cancellaSMS() {
   // Cancella tutti i messaggi sulla SIM
-//  gprsSerial.println("AT+CMGD=4,4");
   gprsSerial.println("AT+CMGDA=\"");
   gprsSerial.println("DEL ALL\"");
   delay(3000);
