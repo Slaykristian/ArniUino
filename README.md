@@ -27,7 +27,8 @@ Lista dei materiali usati:
 - una lamiera di tettuccio arnia da 10 favi;
 - l'elemento "più complicato" da procurarsi sono le squadrette per alloggiare le celle di carico. Io ho fatto stampare queste: https://www.thingiverse.com/thing:2624188 Si trovano anche su ebay, altrimenti dovreste cercare il modo di stamparle in 3D;
 - una SIM dati (Ho. Mobile o ThingsMobile o simili)
-- un cavo USB per arduino-stampante almeno di 1,5m, meglio 2m.
+- un cavo USB per arduino-stampante almeno di 1,5m, meglio 2m;
+- registrare un account gratuito su ThingSpeak: https://thingspeak.com/
 
 # Procediamo
 
