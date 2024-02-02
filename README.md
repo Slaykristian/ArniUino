@@ -9,12 +9,16 @@ se il testo inviato è "Reset", viene riavviato il sistema, forzando la riconnes
 L'alimentazione utlizza una batteria 12V 7.2Ah, un pannello fotovoltaico da 20W e 12V, un regolatore di carica da 20A con uscite USB 5V e 2A; il tutto collegato all'ingresso USB di Arduino.
 
 
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/3c814f74-ea29-4562-90fd-5aea14c77e6c)
+
+
 Lista dei materiali usati:
 - Arduino UNO R3;
 - Shield GSM SIM900A (https://www.ebay.it/itm/134579153986)
 - Celle di carico 50kg con HX711;
 - Jumper vari (femmina-maschio);
 - 2 sensori DHT11;
+- 2 case per i sensori DHT11 (così: https://www.ebay.it/itm/403573240690?var=673533907768&mkevt=1&mkcid=1&mkrid=724-53478-19255-0&campid=5338748322&toolid=20006&customid=F5H2CzYcAAAA7OEnkl9yK-LQ__cVAAAAAA)
 - un convertitore USB-Seriale come questo https://www.ebay.it/itm/361612198155
 - cavo dati (8 poli - minimo 2m);
 - scatole di derivazione IP65 (2 tipo 84x58x34mm IP65; 4 tipo 100x68x50mm IP65);
@@ -147,6 +151,21 @@ Non ho disegni con quote e sono andato ad occhio, ma vi serve una punta del trap
 Come visibile nell'immagine, quello bianco necessita di 4 fori. 3 fori per i PG7 e uno ce faccia passare l'USB di Arduino.
 Non mi dilungherò in merito, ma lascio alle foto quanto è necessario fare. Una volta eseguiti i fori, è necessario curarsi di inserire i passacavi. Le scatole bianche sono l'appoggio per le squadrette con le celle di carico.
 
+# Connettere i sensori di temperatura DHT11
+
+Sono economici e nelle prove che ho eseguito, più affidabili anche son si tratta di strumenti "di precisione" (non è questo che stiamo cercando).
+Sono praticamente plug&play.
+
+Sono dotati di 3 pin: il Vcc+, l'uscita con la lettura e il GND:
+
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/f5c2d425-f73d-43e1-be99-e3949cb9e8c3)
+
+
+Potete provare con gli sketch di esempio contenuti nella libreria DHT.h (che sarà quella che ci servirà anche nel codice, quindi scaricatevela), per testarne il funzionamento.
+
+Nel nostro progetto ne abbiamo inseriti 2 di DHT11: uno che sarà dotato di un cavo più lungo che andremo a realizzargli e che andrà posizionato, passando da dietro, all'interno dell'arnia e uno che andrà messo sulla struttura stessa, in posizione protetta, ma che sarà adibito alla rilevazione della temperatura esterna.
+Nel nostro progetto, come vedrete nel paragrafo sotto, riguardante le connessioni, il sensore che va all'interno dell'arnia è il sensore collegato al pin5, chiamato "dht2" (che restituisce il valore "t2"), mentre al pin2 c'è il sensore chiamato "dht1" che restituisce il valore "t1". 
+
 # Connettere le celle di carico
 
 Lo schema di connessione delle celle di carico è questo:
@@ -163,6 +182,8 @@ Lo schema di connessione delle celle di carico è questo:
 Questo è per darvi un'idea di massima, della logica di connessione delle celle e dell'HX711.
 
 Per quanto riguarda la parte di connessione tra celle e HX711, basatevi sullo schema in immagine precedente; per la parte da HX711 notate che sono 4 i pin da connettere: il polo positivo Vcc+, il GND e i 2 pin digitali denominati Data e Sck o qualcosa di simile. Questi 2 vengono citati nello sketch, quindi nel punto sull'assemblaggio vedremo a quali pin connetterli per poter essere utilizzati col codice fornito.
+In Arduino è possibile divertirsi con le celle di carico, usando gli sketch forniti dalla libreria HX711.h che vi consiglio di provare.
+Sarà poi una di quelle librerie che installeremo e richiameremo.
 
 Nel prossimo punto assembleremo celle, shield e sensori, con la sequenza di pin previsti dal codice che andremo a realizzare.
 
@@ -170,4 +191,11 @@ Nel prossimo punto assembleremo celle, shield e sensori, con la sequenza di pin 
 
 Un consiglio è di provare tutte le connessioni senza riporle nelle scatole. 
 Comprese le logiche di connessione dei sensori, dell'HX711 e dello shield GSM.
+Nello schema qui sotto (perdonatemi, ma non sono un "elettronico"), trovate le connessioni corrispondenti ai pin gestiti dal codice dell'Arduino che andremo ad inserire.
+Questo è il legame tra le connessioni. Provatelo prima con i jumper e basta, poi provate, come nella mia immagine dello scheletro a realizzarlo, utilizzando un cavo dati, munendosi di carta per annotarsi a qualce colore del cavo dati corrisponde la connessione che state predisponendo e così via.
+Punto fondamentale è che lo schema condivide l'alimentazione e che, a differenza di quello che viene scritto sui forum di Arduino (anche in italiano), lo shield SIM900A supporta tranquillamente i 2A per le connessioni.
+Inoltre, non l'ho detto in precedenza, munitevi di pazienza e saldate a stagno tutte le componenti, specialmente le celle di carico con l'HX711 e con Arduino, poiché è un comparto sensibile alle variazioni di corrente e se la connessione tra i suoi pin non è regolare, è facile avere letture sbagliate.
+
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/e2ece0ed-0675-4e85-827e-a4e6d9b650cc)
+
 
