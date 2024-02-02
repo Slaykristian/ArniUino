@@ -214,5 +214,20 @@ Non l'ho testata ancora alle condizioni climatiche avverse; al gelo, va bene.
 
 # Il codice
 
+Il codice sicuramente può essere modificato e migliorato.
+Lo trovate in allegato a questo progetto e si chiama "ArniUino".
+E' necessario installare nell'IDE le librerie DHT.h e HX711.h . La SoftwareSerial.h dovrebbe già essere inclusa. 
+Cosa fa in sostanza questo codice...
+All'avvio inizializza le porte e assegna i ruoli a tutto ciò che è connesso.
+Parte ed effettua la taratura delle celle, procedura la cui comprensione non è stata semplice.
+Fissa il valore a zero del peso e se carica legge e restituisce il peso letto e corretto della tara inutile.
+Legge e restituisce i valori di Temperatura ed Umidità dei 2 sensori poi setta la connessione GPRS e invia a ThingSpeak la lettura sottoforma di una stringa.
+Se la connessione esiste arriva a tentare l'invio, altrimenti riprova daccapo.
+A inserimento riuscito, restituisce il numero di dato mandato e chiude la connessione GPRS, mettendosi in attesa di ricezione SMS per 28 minuti circa.
+Durante questi 28 minuti, se, al numero della SIM si invia un SMS contenente la stringa "Dati" (senza spazi), il sistema effettua una lettura istantanea col medesimo sistema di quando la invia a ThingSpeak, solo che vi costruirà un SMS e vi risponderà. Non sempre la ricezione gli riesce al primo colpo. Quindi può essere necessario inviargli più di un SMS (in genere massimo 3-4), ma la maggior parte delle volte riesce a leggerlo al primo colpo.
+Se, invece, gli si invia un SMS contenente la stringa "Reset", allora sempre se lo riesce a leggere subito (altrimenti ritenteremo), riavvia Arduino per riconnettersi.
+Questa funzione è utile quando si nota che il sistema sta rtiscontrando difficoltà di invio delle stringhe a ThingSpeak.
+Passati i 28 minuti circa, si riavvia lo sketch e proverà a pubblicare un altro pacchetto di dati su ThingSpeak.
+
 
 
