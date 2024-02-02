@@ -196,6 +196,23 @@ Questo è il legame tra le connessioni. Provatelo prima con i jumper e basta, po
 Punto fondamentale è che lo schema condivide l'alimentazione e che, a differenza di quello che viene scritto sui forum di Arduino (anche in italiano), lo shield SIM900A supporta tranquillamente i 2A per le connessioni.
 Inoltre, non l'ho detto in precedenza, munitevi di pazienza e saldate a stagno tutte le componenti, specialmente le celle di carico con l'HX711 e con Arduino, poiché è un comparto sensibile alle variazioni di corrente e se la connessione tra i suoi pin non è regolare, è facile avere letture sbagliate.
 
-![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/e2ece0ed-0675-4e85-827e-a4e6d9b650cc)
+
+![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/6e2e9de8-da3f-4f6a-96b6-f064d8bb40f9)
+
+
+
+Volutamente non mi sbilancio su come fare la parte di bricolage. Il bello è questo... Ognuno lo realizza come meglio crede.
+Notate nell'immagine dove si mostra lo "scheletro" che il tutto poggia su due pezzi di legno che sono lunghi quanto il lato più lungo di un'arnia e larghi pocho di più del lato della scatoletta grigia, con uno spessore di almeno 2 cm.
+Sono stati ricavati da una vecchia cornice utilizzata per l'ingabbio di regina su favo orizzontale (ormai non più utilizzati), le cui dimensioni le ho riportate sopra.
+Nulla vieta di utilizzare altri materiali più resistenti. 
+Questi pezzi, come si può intravedere dall'immagine all'inizio della guida, sono stati passati con la catramina per renderli impermeabili. 
+Le plastiche sono state tutte attaccate con colla "millechiodi" essendo quelle plastiche tali da legarsi con quel materiale ed il legno trattato. Infine, cosa importantissima, sono state create alla fine, due "bane", chiamiamole così.
+Ho preso la lamiera di un tettuccio e l'ho tagliata con una cesoia in modo da creare 2 coperture che facciano da elemento di appoggio delle arnie.
+In questa maniera la distribuzione del peso è omogenea. E le connessioni, compreso il sensore di temperatura per l'esterno, protette.
+
+Non l'ho testata ancora alle condizioni climatiche avverse; al gelo, va bene.
+
+# Il codice
+
 
 
