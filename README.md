@@ -40,7 +40,7 @@ Imparate a connettere correttamente, cominciando a provare uno per volta, gli el
 
 # Lo shield GSM
 
-A causa delle dimensioni geometriche, lo shield SIM900A è il giusto compromesso tra funzionalità e spazio occupato. Ma attenzione, deve esse dello stesso tipo della lista dei materiali.
+A causa delle dimensioni geometriche, lo shield SIM900A è il giusto compromesso tra funzionalità e spazio occupato. Ma attenzione, deve essere dello stesso tipo della lista dei materiali.
 Tralascio tutta la spiegazione su come collegarlo e sui comandi AT. Per chi volesse approfondire, in rete è pieno di documentazioni.
 
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/4828eb5a-0bf7-4d25-ab82-a6288524ee09)
