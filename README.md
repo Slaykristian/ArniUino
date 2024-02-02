@@ -48,9 +48,12 @@ Tralascio tutta la spiegazione su come collegarlo e sui comandi AT. Per chi vole
 
 Se lo installate così com'è, troverete un errore dovuto al blocco di utilizzo sulle reti 4G europee.
 Ve ne accorgete perchè, se collegato ad Arduino, e inserite una SIM, il led blinka ad ogni secondo perchè continua a cercare la rete senza trovarla, altrimenti blinkerebbe ogni 3 secondi.
-La prima cosa da fare è connettere la parte di alimentazione ai pin presenti su Arduino e collegare i 2 pin (uno per Tx e uno per Rx) alla scheda con gli ingressi digitali.
-Come connetterlo ad Arduino?
-Estraendo una delle immagini è ben visibile dove connettere i pin "Rx" e "Tx", ricordandosi che il Pin "Rx" (nella foto è 5VR; il 5VT è quello "Tx") che esce dallo shield, sull'Arduino corrisponde al suo slot "Tx" e viceversa:
+Qualora non fosse così, allora il firmware dello shield è già ok e potete passare oltre nella lettura, altrimenti cerchiamo di risolvere questo inconveniente...
+
+La prima cosa da fare è connettere la parte di alimentazione ai pin presenti su Arduino(5V e GND) e collegare i 2 pin visibili nell'immagine sottostante, presenti sullo shield GSM (uno per Tx e uno per Rx) sempre sull'Arduino.
+Attenzione che il connettore Tx dello shield, per l'Arduino è l'Rx (lo shield trasmette, Arduino riceve...) e viceversa: l'Rx dello shield è il Tx dell'Arduino. Questo è importante per il codice che andremo a scrivere.
+
+Ecco un'immagine:
 
 
 
@@ -59,8 +62,11 @@ Estraendo una delle immagini è ben visibile dove connettere i pin "Rx" e "Tx", 
 
 
 
-Negli sketch che potreste provare su Arduino con lo shield, non è necessario includere librerie diverse da SoftwareSerial.h (che è l'unica da includere), quindi, dovreste preparare uno sketch molto semplice lanciando il comando "AT+GMR", Connetti TX a pin3 e RX a pin4 e usa questo sketch: https://github.com/Slaykristian/ArniUino/blob/main/Sketch_versione_SIM900A
+Negli sketch che potreste provare su Arduino con lo shield, non è necessario includere librerie diverse da SoftwareSerial.h (che è l'unica da includere).
+Adesso, dovreste preparare uno sketch molto che vi restituisce il firmware attualmente installato sullo shield, direttamente come testo sul seriale dell'Arduino, per lanciare il comando "AT+GMR".
+Connetti TX a pin3 e RX a pin4 e usa questo sketch: https://github.com/Slaykristian/ArniUino/blob/main/Sketch_versione_SIM900A
 
+Compilate e lanciate lo sketch e otterrete la versione installata attuale.
 E' quindi necessario provvedere a scaricare un firmware adatto (anche se per SIM900 e non per 900A) e installarlo secondo la procedura presente in questo sito:
 https://acoptex.com/wp/basics-project-105b-sim900a-gsm-gprs-module-how-to-flash-another-firmware/
 
