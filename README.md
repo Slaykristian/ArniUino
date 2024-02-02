@@ -160,7 +160,11 @@ Lo schema di connessione delle celle di carico è questo:
 ![immagine](https://github.com/Slaykristian/ArniUino/assets/9326918/82a98358-fc56-42a8-be53-660defa3d13b)
 
 
-Questo è per darvi un'idea di massima, della logica di connessione delle celle e dell'HX711. Nel prossimo punto assembleremo celle, shield e sensori, con la sequenza di pin previsti dal codice che andremo a realizzare.
+Questo è per darvi un'idea di massima, della logica di connessione delle celle e dell'HX711.
+
+Per quanto riguarda la parte di connessione tra celle e HX711, basatevi sullo schema in immagine precedente; per la parte da HX711 notate che sono 4 i pin da connettere: il polo positivo Vcc+, il GND e i 2 pin digitali denominati Data e Sck o qualcosa di simile. Questi 2 vengono citati nello sketch, quindi nel punto sull'assemblaggio vedremo a quali pin connetterli per poter essere utilizzati col codice fornito.
+
+Nel prossimo punto assembleremo celle, shield e sensori, con la sequenza di pin previsti dal codice che andremo a realizzare.
 
 # Connettiamo tutto
 
